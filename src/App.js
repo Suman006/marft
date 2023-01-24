@@ -1,5 +1,5 @@
 import React from "react";
-import Threecard from "./template/Threecard";
+import Service from './template/Service';
 import { createTheme, ThemeProvider } from "@mui/material";
 
 
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Threecard />
+        <Service/>
       </ThemeProvider>
     </>
   );

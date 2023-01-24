@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => {
       backgroundColor: "#F8F3EC",
       width: "100%",
       height: "960px",
-      padding : "20px",
       [theme.breakpoints.down("lg", "md", "sm")]: {
         height: "100%",
         padding :"20px"
@@ -32,7 +31,10 @@ const useStyles = makeStyles((theme) => {
     },
     threecard: {
       display: "flex",
-      justifyContent: "center",
+      [theme.breakpoints.up("lg")]: {
+        display :"flex",
+        justifyContent:"center"
+      },
     },
     first_card: {
       height: "350px",
@@ -45,13 +47,6 @@ const useStyles = makeStyles((theme) => {
         textAlign: "center"
       },
     },
-    second_card: {
-      padding: "20px",
-      height: "350px",
-      [theme.breakpoints.down("md","sm")]: {
-        padding: "5px",
-      },
-    },
     third_card: {
       height: "350px",
       padding: "20px",
@@ -62,14 +57,13 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
- const Threecard = () => {
+ const Service = () => {
   const {
     main,
     mainhead,
     head_text,
     threecard,
     first_card,
-    second_card,
     third_card,
     first_card_content,
   } = useStyles();
@@ -93,7 +87,7 @@ const useStyles = makeStyles((theme) => {
         </Box> 
 
         <Grid container spacing={3} className={threecard}>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
             <Card sx={{ backgroundColor: "#EAE4DC" }} className={first_card}>
               <Grid sx={{ padding: "20px" }} className={first_card_content}>
                 <Avatar src="../../assets/cardimg11.png" />
@@ -119,10 +113,10 @@ const useStyles = makeStyles((theme) => {
               </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
-            <Card sx={{ backgroundColor: "#EAE4DC" }} className={second_card}>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
+          <Card sx={{ backgroundColor: "#EAE4DC" }} className={third_card}>
               <Grid sx={{ padding: "20px" }}>
-                <Avatar src="../../assets/cardimg2.png" />
+                <Avatar src="../../assets/cardimg3.png" />
               </Grid>
               <CardContent className={first_card_content}>
                 <Typography variant="h3">Partnership</Typography>
@@ -146,34 +140,7 @@ const useStyles = makeStyles((theme) => {
               </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
-            <Card sx={{ backgroundColor: "#EAE4DC" }} className={third_card}>
-              <Grid sx={{ padding: "20px" }}>
-                <Avatar src="../../assets/cardimg3.png" />
-              </Grid>
-              <CardContent className={first_card_content}>
-                <Typography variant="h3">Content</Typography>
-                <Typography variant="h3">Creations</Typography>
-                <Box>
-                <Typography color="text.secondary" sx={{ marginTop: "15px" }}>
-                  Lorem ipsum dolor sit amet. <br />
-                  Lorem ipsum dolor sit amet  <br />
-                  Lorem ipsum dolor si.
-                </Typography>
-                </Box>
-              </CardContent>
-              <CardActions className={first_card_content}>
-                <Button
-                  sx={{ fontWeight: "bold" }}
-                  size="small"
-                  variant="string"
-                >
-                  Learn More
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
             <Card sx={{ backgroundColor: "#EAE4DC" }} className={third_card}>
               <Grid sx={{ padding: "20px" }}>
                 <Avatar src="../../assets/cardimg3.png" />
@@ -206,4 +173,4 @@ const useStyles = makeStyles((theme) => {
   );
 };
 
-export default Threecard;
+export default Service;
